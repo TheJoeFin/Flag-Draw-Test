@@ -24,6 +24,7 @@ body {
 #drawingCanvas {
   border: 1px solid black;
   background-color: white;
+  max-width: 100%;
 }
 
 #previewCanvas {
@@ -31,8 +32,28 @@ body {
   top: 0;
   left: 0;
   pointer-events: none;
+  max-width: 100%;
 }
 
 #bottomToolbar {
   margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  #toolbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #toolSelection,
+  #settings {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #drawingCanvas,
+  #previewCanvas {
+    width: 100%;
+    height: auto;
+  }
 }
