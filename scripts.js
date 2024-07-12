@@ -153,3 +153,24 @@ canvas.addEventListener("mouseout", () => {
   isDrawing = false
   previewContext.clearRect(0, 0, previewCanvas.width, previewCanvas.height)
 })
+
+// Add touch event listeners
+canvas.addEventListener("touchstart", handleTouchEvent)
+canvas.addEventListener("touchmove", handleTouchEvent)
+canvas.addEventListener("touchend", handleTouchEvent)
+canvas.addEventListener("touchcancel", handleTouchEvent)
+
+function handleTouchEvent(e) {
+  const touch = e.touches[0] || e.changedTouches[0]
+  const rect = canvas.getBoundingClientRect()
+  const offsetX = touch.clientX - rect.left
+  const offsetY = touch.clientY - rect.top
+
+  const mouseEvent = new MouseEvent(e.type.replace("touch", "mouse"), {
+    clientX: offsetX,
+    clientY: offsetY,
+    button: 0,
+  })
+
+  canvas.dispatchEvent(mouseEvent)
+}
