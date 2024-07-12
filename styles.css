@@ -1,0 +1,38 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+#toolbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#toolSelection,
+#settings {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+#drawingCanvas {
+  border: 1px solid black;
+  background-color: white;
+}
+
+#previewCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+#bottomToolbar {
+  margin-top: 10px;
+}

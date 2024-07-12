@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flag Drawing App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Flag Drawing App</h1>
+    <div id="toolbar">
+        <div id="toolSelection">
+            <label>
+                <input type="radio" name="tool" value="freeDraw" checked> Free Draw
+            </label>
+            <label>
+                <input type="radio" name="tool" value="drawRect"> Draw Rectangle
+            </label>
+            <label>
+                <input type="radio" name="tool" value="drawCircle"> Draw Circle
+            </label>
+            <label for="fillShape"> Fill Shape:</label>
+            <input type="checkbox" id="fillShape" checked>
+        </div>
+        <div id="settings">
+            <label for="penColor">Pen Color:</label>
+            <input type="color" id="penColor" value="#000000">
+            <label for="strokeSize">Stroke Size:</label>
+            <input type="range" id="strokeSize" min="6" max="30" value="16">
+        </div>
+        <div id="ShapeOptions">
+            <label for="bgColor">Background Color:</label>
+            <input type="color" id="bgColor" value="#ffffff">
+        </div>
+    </div>
+    <div style="position: relative;">
+        <canvas id="drawingCanvas"></canvas>
+        <canvas id="previewCanvas"></canvas>
+    </div>
+    <div id="bottomToolbar">
+        <button id="clearCanvas">Clear</button>
+        <button id="saveCanvas">Save</button>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
